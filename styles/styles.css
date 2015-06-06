@@ -1,0 +1,24 @@
+.waiting{
+	display: none;
+	text-align: center;
+}
+.log{
+	width: 100%;
+	height: 300px !important;
+}
+.input-text{
+	width: 100%;
+}
+.btn-call{
+	background: #2dcc70;
+	color: #FFF;
+}
+.btn-hangup{
+	background: red;
+	color: #FFF;
+	display: none;
+}
+.btn-call:hover{
+	background: #1aaf5d;
+	color: #FFF;
+}
