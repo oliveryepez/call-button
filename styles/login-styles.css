@@ -175,13 +175,16 @@ body{
 }
 .chat-container .messages ul{
   list-style-type: none;
+  margin-left: 0;
+  padding-left: 15px;
 }
 #messages{
     bottom: 0px;
     right: 0px;
-    margin: 25px;
+    margin: 25px 25px 0 0;
     font-size: 13px;
     font-family:Gotham; 
+    color: #FFF;
 }
 .chat-container .send-container{
   width: 100%;
@@ -210,8 +213,19 @@ body{
   font-weight: bold;
     color: lightseagreen;
     font-family: "Gotham Bold";
+    text-transform: capitalize;
 }
-
+.contact-receiver{
+  font-weight: bold;
+    color: crimson;
+    font-family: "Gotham Bold";
+    text-transform: capitalize;
+}
+li.recieve {
+  text-align: left;
+  margin-left: 10px;
+  right: 100%;
+}
 ::-webkit-scrollbar 
 {
     width: 5px;

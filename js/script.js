@@ -96,8 +96,8 @@ $(function(){
     $audioRingIn[0].pause();
     $audioRingOut[0].pause();
 
-    $("#btnMakeCall").css('display', 'none');
-    $("#btnHangup").css('display', 'block');
+    $("#btnMakeCall").css('display', 'block');
+    $("#btnHangup").css('display', 'none');
    
   }
 
@@ -153,16 +153,18 @@ $(function(){
     });
   }
 
-  $('#btnMakeCall').on('click', function(){
-    
-    //kandy.call.makeCall($userTo, false);
+  $('#btnContactUs').on('click', function(){
     $('#modal-call').modal({
       show: 'true'
-    })
-    
-    $("#btnMakeCall").css('display', 'none');
-    $("#btnHangup").css('display', 'block');
+    });
+  });
 
+  $('#btnMakeCall').on('click', function(){
+    
+    kandy.call.makeCall($userTo, false); 
+
+    $("#btnMakeCall").css('display', 'none');
+    $("#btnHangup").css('display', 'block');   
   });
 
   $("#btnHangup").on('click', function(){

@@ -9,6 +9,11 @@
 body{
 	font-family: Gotham;
 }
+.col-md-3 {
+  padding: 0px;
+  margin: 0px;
+  width: 20.3%;
+}
 .waiting{
 	display: none;
 	text-align: center;
@@ -20,15 +25,24 @@ body{
 .input-text{
 	width: 100%;
 }
-.btn-call{
+.btn-contact{
 	background: #2dcc70;
 	color: #FFF;
 	margin-top: 20%;
+}
+.btn-call {
+  background: #2dcc70;
+  color: #FFF;
+  margin-top: 15px;
+  float: left;
 }
 .btn-hangup{
 	background: red;
 	color: #FFF;
 	display: none;
+	float: left;
+	margin-left: 95px;
+  	margin-top: 15px;
 }
 .btn-call:hover{
 	background: #1aaf5d;

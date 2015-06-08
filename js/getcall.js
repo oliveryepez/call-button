@@ -50,6 +50,8 @@ $(function(){
 
       	$("#login-form").css("display", "none");
       	$('#oncall_screen').css('display', 'block');
+
+      	setInterval(recieveMessages, 1000);
       }
 
       function onLoginFailed(){
@@ -131,6 +133,30 @@ $(function(){
 	      console.log('===> Failed sending Message');
 	    });
   	 }
+
+  	 function recieveMessages(){
+    KandyAPI.Phone.getIm(function(data){
+       console.log('===> recieving messages!');
+      data.messages.forEach(function(msg){
+         if(msg.messageType == 'chat' && msg.contentType === 'text' && msg.message.mimeType == 'text/plain') {
+            
+            var $userSender   = $('<div class="contact-receiver">').text(msg.sender.user_id + ":");
+            var $messageSend = $('<p>').text(msg.message.text);
+            var $msgContainerSend = $("<li class='recieve'>");
+
+            $msgContainerSend.append($userSender, $messageSend);
+            $('#messages').append($msgContainerSend);
+               
+            $(".messages").scrollTop($(".messages").get(0).scrollHeight);
+         }else{
+            console.log('received ' + msg.messageType + ': ');
+         }
+      });
+    },
+    function(){
+      console.log('===> Failed recieving messages!');
+    });
+  }
 
       $('#frmLogin').submit(function(e){
       	e.preventDefault();
