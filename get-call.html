@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get Anonymous Call</title>
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="https://kandy-portal.s3.amazonaws.com/public/javascript/fcs/3.0.4/fcs.js" ></script>
+	<script src="https://kandy-portal.s3.amazonaws.com/public/javascript/kandy/2.2.2/kandy.js" ></script>
+	<script type="text/javascript" src="styles/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/getcall.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/login-styles.css">
+</head>
+<body>
+ 	<div class="container">
+	 	<div class="form-wrap row">
+			<div id="login-form">
+				<div class="form-header">	
+					<img src="assets/logo-big.png">
+				</div>
+				<div class="form-content">
+					<form id="frmLogin" action="" method="post">
+						<div class="form-group">
+							<input type="text" id="txt_username" class="form-control" placeholder="Username" required>
+							<input type="password" id="txt_password" class="form-control" placeholder="Password" required>
+						</div>
+						<button type="submit" id="btn_login" class="btn btn-block sigin">Sign In</button>
+					</form>
+				</div>
+			</div>
+	 	</div>
+
+ 		<div class="row oncall-screen" id="oncall_screen">
+ 			<div class="col-md-4 left-side">
+ 				<div class="video-tab">
+ 					<div class="header">
+ 						<h3>Agent Support Video</h3>
+ 					</div>
+ 					<div class="container" id="video_container"></div>
+ 				</div>
+
+ 				<div class="chat-tab">
+ 					<div class="header">
+ 						<h3>Chat with me</h3>
+ 					</div>
+ 				</div>
+ 			</div>
+ 			<div class="col-md-8 right-side">
+ 				<div class="header">
+ 					<button type="button" class="btn btn-signout" id="btn_signout">Sign out</button>
+ 					<button class="btn btn-hangup" id="btn_hangup">Hangup</button>
+ 				</div>
+ 			</div>
+ 		</div>
+
+ 		<div class="modal fade" id="modal_call">
+ 			<div class="modal-dialog">
+ 				<div class="modal-content">
+ 					<div class="modal-header">
+ 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+ 							<span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+ 						</button>
+ 						<h3 class="modal-title">
+ 						<span class="glyphicon glyphicon-earphone"></span>
+ 						Incomming call!
+ 						</h3>
+ 					</div>
+ 					<div class="modal-body">
+ 						<label>Incoming call from <strong id="caller"></strong></label>
+ 					</div>
+ 					<div class="modal-footer">
+						<button class="btn btn-hangup" id="btn_reject">Reject</button>
+						<button class="btn btn-answer" id="btn_answer">Answer</button>
+ 					</div>
+ 				</div>
+ 			</div>
+ 		</div>
+
+ 	</div>
+</body>
+</html>
