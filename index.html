@@ -9,22 +9,68 @@
 	<meta name="csrf-param" content="authenticity_token" />
     <meta name="csrf-token" content="10XpiFp9RYl7ssA0aZY0K70PAeQc28PYvZ/wQkQESe86nEd43noCXKRfwIQ+jWee2eON+xQpweA+6bUlFSQmQw==" />
 
-	<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script src="https://kandy-portal.s3.amazonaws.com/public/javascript/fcs/3.0.4/fcs.js" ></script>
 	<script src="https://kandy-portal.s3.amazonaws.com/public/javascript/kandy/2.2.2/kandy.js" ></script>
+	<script type="text/javascript" src="styles/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 <body>
-	<div class="container">
-		<button id="btnMakeCall" class="btn btn-call">Make Call</button>
-		<button id="btnHangup" class="btn btn-hangup">Hangup</button>
-		<div clas="row">
-			  <div id="incoming-video"></div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-6 col-md-6 big-box" id="first-child"></div>
+			<div class="col-xs-6 col-md-6 big-box" id="second-child"></div>
 		</div>
+		<div class="row">
+			<div class="col-xs-6 col-md-6 big-box" id="third-child"></div>
+			<div class="col-xs-6 col-md-6 big-box" id="fourth-child">
+				<button id="btnMakeCall" class="btn btn-call">Make Call</button>
 
+				<div class="modal fade" id="modal-call" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content modal-content-four">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+								<h3 class="modal-title" id="myModalLabel">WebRTC is Comming - Tech Support</h3>
+							</div>
+							<div class="modal-body">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-3">
+											<div class="agent-video">
+												<div class="header">
+													<h3>Agent Support</h3>
+												</div>
+												<div class="video-container">
+													<div id="incoming-video"></div>
+												</div>
+											</div>
+											<div class="chat-container">
+												<div class="header">
+													<h3>Chat Here!</h3>
+												</div>
+												<div class="messages">
+													<ul id="messages"></ul>
+												</div>
+												<div class="send-container">
+													<form id="frm_send" method="post">
+														<input type="text" id="txt_send" class="text-send" placeholder="Write Here!"> 
+													</form>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-9"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

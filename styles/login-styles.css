@@ -1,3 +1,14 @@
+@font-face {
+    font-family: Gotham;
+    src: url(fonts/Gotham.ttf);
+}
+@font-face {
+    font-family: "Gotham Bold";
+    src: url(fonts/Gotham-bold.ttf);
+}
+body{
+  font-family: Gotham;
+}
 .col-md-4{
   padding: 0;
   margin: 0;
@@ -91,13 +102,13 @@
 	border-bottom: 1px solid #eee;
 	text-align: center;
 }
-.chat-tab{
+.chat-container{
 	width: 100%;
-	height: 400px;
+	height: 300px;
 	border: 1px solid #eee;
 	background: #505050;
 }
-.chat-tab .header{
+.chat-container .header{
 	color: #fff;
 	border-bottom: 1px solid #fff;
 	text-align: center;
@@ -152,4 +163,57 @@
   width: 100%;
   padding: 0px;
   margin: 0px;
+}
+
+.chat-container .messages{
+  width: 100%;
+  height: 200px;
+  text-align: right;
+  margin-right: 5px;
+  position: relative;
+  overflow:auto;
+}
+.chat-container .messages ul{
+  list-style-type: none;
+}
+#messages{
+    bottom: 0px;
+    right: 0px;
+    margin: 25px;
+    font-size: 13px;
+    font-family:Gotham; 
+}
+.chat-container .send-container{
+  width: 100%;
+  height: 80px;
+}
+.chat-container .send-container input[type="text"]{
+  width: 100%;
+  height: 80px;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #505050;
+  border-right: 1px solid #505050;
+  border-bottom: none;
+  background: #505050;
+  padding:10px;
+  resize: none;
+  border-radius: 0px 0px 10px 10px;
+}
+.send-container input[type="text"]:focus{
+  background: #FFF;
+  border: 1px solid #505050;
+  border-top: 1px solid #fff;
+  outline: 0;
+  color: #000;
+}
+.contact-sender{
+  font-weight: bold;
+    color: lightseagreen;
+    font-family: "Gotham Bold";
+}
+
+::-webkit-scrollbar 
+{
+    width: 5px;
+    background-color:#505050;
 }

@@ -4,6 +4,7 @@ $(function(){
     var $audioRingOut = $('<audio>', { loop: 'loop', id: 'ring-out' });
 
     var $apiKey = 'DAK00068abf414f4e6fa818a123a1f3fd4d';
+    var $userTo = 'sender@oliveryepez.gmail.com';
       
       // Load audio source to DOM to indicate call events
       var audioSource = {
@@ -109,6 +110,28 @@ $(function(){
         $audioRingOut[0].pause();
       }
 
+      function sendMessages(){
+	    var $message = $('#txt_send').val();
+
+	    KandyAPI.Phone.sendIm($userTo, $message, function(){
+	      console.log('===> Send message success!');
+
+	      var $msgContainer = $("<li class='send'>");
+	      var $userLabel = $("<div class='contact-sender'>").text('You:');
+	      var $messageText = $("<p>").text($message);
+
+	      $msgContainer.append($userLabel, $messageText);
+	      $('#messages').append($msgContainer);
+
+	      $('#txt_send').val("");
+
+	      $(".messages").scrollTop($(".messages").get(0).scrollHeight);
+	    },
+	    function(){
+	      console.log('===> Failed sending Message');
+	    });
+  	 }
+
       $('#frmLogin').submit(function(e){
       	e.preventDefault();
       	var $username = $('#txt_username').val();
@@ -116,6 +139,12 @@ $(function(){
 
       	kandy.login($apiKey, $username, $password, onLoginSuccess, onLoginFailed);
       });
+
+
+      $('#frm_send').submit(function(e){
+	    e.preventDefault();
+	    sendMessages();
+  	   });
 
       $('#btn_signout').click(function(){
       		

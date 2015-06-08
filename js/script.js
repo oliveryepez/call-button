@@ -2,12 +2,12 @@ $(function(){
   
 //document.preventDefault();
   var APIKey = 'DAK00068abf414f4e6fa818a123a1f3fd4d'; 
-
-  var username = 'sender'; 
+  var username = 'sender@oliveryepez.gmail.com'; 
   var password = 'k5p9q6vv4x35504352';
+  var $userTo = 'reciever@oliveryepez.gmail.com';
 
-  var username = 'costumer'; 
-  var password = '12345abc';
+  /*var username = 'costumer'; 
+  var password = '12345abc';*/
 
   var usernameToCall, callId;
 
@@ -52,6 +52,7 @@ $(function(){
 
   function onLoginSuccess(){
     console.log("Login Success!");
+    setInterval(recieveMessages, 1000);
   }
 
 
@@ -105,10 +106,59 @@ $(function(){
     callId = null;
   }
 
+  function sendMessages(){
+    var $message = $('#txt_send').val();
+
+   KandyAPI.Phone.sendIm($userTo, $message, function(){
+      console.log('===> Send message success!');
+
+      var $msgContainer = $("<li class='send'>");
+      var $userLabel = $("<div class='contact-sender'>").text('You:');
+      var $messageText = $("<p>").text($message);
+
+      $msgContainer.append($userLabel, $messageText);
+      $('#messages').append($msgContainer);
+
+      $('#txt_send').val("");
+
+      $(".messages").scrollTop($(".messages").get(0).scrollHeight);
+    },
+    function(){
+      console.log('===> Failed sending Message');
+    });
+  }
+
+
+  function recieveMessages(){
+    KandyAPI.Phone.getIm(function(data){
+       console.log('===> recieving messages!');
+      data.messages.forEach(function(msg){
+         if(msg.messageType == 'chat' && msg.contentType === 'text' && msg.message.mimeType == 'text/plain') {
+            
+            var $userSender   = $('<div class="contact-receiver">').text(msg.sender.user_id + ":");
+            var $messageSend = $('<p>').text(msg.message.text);
+            var $msgContainerSend = $("<li class='recieve'>");
+
+            $msgContainerSend.append($userSender, $messageSend);
+            $('#messages').append($msgContainerSend);
+               
+            $(".messages").scrollTop($(".messages").get(0).scrollHeight);
+         }else{
+            console.log('received ' + msg.messageType + ': ');
+         }
+      });
+    },
+    function(){
+      console.log('===> Failed recieving messages!');
+    });
+  }
+
   $('#btnMakeCall').on('click', function(){
     
-    usernameToCall = 'support@oliveryepez.gmail.com';
-    kandy.call.makeCall(usernameToCall, false);
+    //kandy.call.makeCall($userTo, false);
+    $('#modal-call').modal({
+      show: 'true'
+    })
     
     $("#btnMakeCall").css('display', 'none');
     $("#btnHangup").css('display', 'block');
@@ -122,6 +172,11 @@ $(function(){
 
     kandy.call.endCall(callId);
   })
+
+  $('#frm_send').submit(function(e){
+    e.preventDefault();
+    sendMessages();
+  });
  
    
 

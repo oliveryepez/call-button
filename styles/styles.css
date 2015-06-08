@@ -1,3 +1,14 @@
+@font-face {
+    font-family: Gotham;
+    src: url(fonts/Gotham.ttf);
+}
+@font-face {
+    font-family: "Gotham Bold";
+    src: url(fonts/Gotham-bold.ttf);
+}
+body{
+	font-family: Gotham;
+}
 .waiting{
 	display: none;
 	text-align: center;
@@ -12,6 +23,7 @@
 .btn-call{
 	background: #2dcc70;
 	color: #FFF;
+	margin-top: 20%;
 }
 .btn-hangup{
 	background: red;
@@ -21,4 +33,160 @@
 .btn-call:hover{
 	background: #1aaf5d;
 	color: #FFF;
+}
+.agent-video{
+	width: 100%;
+	height: 250px;
+	border: 1px solid #eee;
+	margin-bottom: 15px;
+}
+.agent-video .video-container{
+	width: 100%;
+  	height: 200px;
+}
+.chat-container{
+	width:  100%;
+	height: auto;
+	background: #FFF;
+	color: #000;
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+.chat-container .header,
+.agent-video .header{
+	width: 100%;
+	border-bottom: 1px solid #fff;
+	text-align: center;
+	padding: 10px 0;
+}
+.chat-container .header{
+	border-bottom: 1px solid #eee;
+}
+.agent-video .header{
+	border-bottom: 1px solid #eee;
+}
+.chat-container .header h3,
+.agent-video .header h3{
+	margin: 0;
+}
+.chat-container .messages{
+	width: 100%;
+	height: 200px;
+	text-align: right;
+	margin-right: 5px;
+	position: relative;
+	overflow:auto;
+}
+.chat-container .messages ul{
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 15px;
+}
+#messages{
+    bottom: 0px;
+  	right: 0px;
+  	margin: 25px 25px 0 0;
+  	font-size: 13px;
+  	font-family:Gotham; 
+}
+.chat-container .send-container{
+	width: 100%;
+	height: 80px;
+}
+.chat-container .send-container input[type="text"]{
+	width: 100%;
+	height: 80px;
+	border-top: 1px solid #505050;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+	border-bottom: none;
+	background: #fff;
+	padding:10px;
+	resize: none;
+	border-radius: 0px 0px 10px 10px;
+}
+.send-container input[type="text"]:focus{
+	background: #FFF;
+	border: 1px solid #fff;
+	border-top: 1px solid #505050;
+	outline: 0;
+	color: #000;
+}
+.contact-sender{
+	font-weight: bold;
+  	color: lightseagreen;
+  	font-family: "Gotham Bold";
+  	text-transform: capitalize;
+}
+.contact-receiver{
+	font-weight: bold;
+  	color: crimson;
+  	font-family: "Gotham Bold";
+  	text-transform: capitalize;
+}
+li.recieve {
+  text-align: left;
+  margin-left: 10px;
+  right: 100%;
+}
+::-webkit-scrollbar 
+{
+    width: 5px;
+    background-color:#505050;
+}
+
+.big-box {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  opacity: 1;
+  color: white;
+}
+#first-child {
+  top: 0;
+  left: 0;
+}
+#second-child {
+  top: 0;
+  left: 50%;
+}
+#third-child {
+  top: 50%;
+  left: 0;
+}
+#fourth-child {
+  top: 50%;
+  left: 50%;
+  text-align: center;
+}
+
+.modal-dialog {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin:0;
+}
+.modal-content {
+  
+  height: 100%;
+  border-radius: 0;
+  color:white;
+  overflow:auto;
+}
+.modal-title{
+  font-size: 3em;
+  font-weight: 300;
+  margin: 0;
+}
+.modal-content-one{
+  background-color:yellowgreen;
+}
+.modal-content-two{
+  background-color:#E6537D;
+}
+.modal-content-three{
+  background-color:crimson;
+}
+.modal-content-four{
+  background-color:#505050;
 }
