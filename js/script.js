@@ -2,8 +2,13 @@ $(function(){
   
 //document.preventDefault();
   var APIKey = 'DAK00068abf414f4e6fa818a123a1f3fd4d'; 
+<<<<<<< HEAD
   var username = 'sender'; 
   var password = 'k5p9q6vv4x35504352';
+=======
+  var username = 'costumer'; 
+  var password = '12345abc';
+>>>>>>> f455d825fe226fb8a41510adf1237aed141b805c
   var usernameToCall, callId;
 
    var $audioRingIn = $('<audio>', { loop: 'loop', id: 'ring-in' });
@@ -32,8 +37,11 @@ $(function(){
 
 
    kandy.setup({
+<<<<<<< HEAD
      remoteVideoContainer: $('#incoming-video')[0],
 
+=======
+>>>>>>> f455d825fe226fb8a41510adf1237aed141b805c
      listeners: {
        callinitiated: onCallInitiate,
        callinitiatefailed: onCallInitiateFail,
