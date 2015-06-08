@@ -28,6 +28,7 @@ $(function(){
 
       kandy.setup({
       	 localVideoContainer: $('#video_container')[0],
+      	 remoteVideoContainer: $('#incoming-video')[0],
 
       	 listeners: {
             /********* Login **********/
