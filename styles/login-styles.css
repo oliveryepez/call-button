@@ -114,12 +114,17 @@ body{
 	text-align: center;
 }
 .right-side .header{
-	padding: 15px;
+	padding: 9px;
 	text-align: right;
 }
 .btn-hangup{
 	background: #ee2b31;
 	color: #fff;
+  display: none;
+  float: right;
+}
+.btn{
+  margin: 0 5px;
 }
 .btn-hangup:hover{
 	background: #a21d21;
@@ -128,6 +133,7 @@ body{
 .btn-signout{
   background: #000;
   color: #FFF;
+  float: right;
 }
 .btn-signout:hover{
   background: #000;
@@ -140,6 +146,36 @@ body{
 .btn-answer:hover{
 	background: #1aaf5d;
 	color: #FFF;
+}
+.btn-request{
+  background: #3a539b;
+  color: #FFF;
+  float: right;
+}
+.btn-request:hover{
+  background: #1f3a93;
+  color: #FFF;
+}
+#btnShare{
+  display: none;
+}
+.btn-stop-request{
+  background: #00b16a;
+  color: #FFF;
+  display: none;
+}
+.btn-stop-request:hover{
+  background: #049372;
+  color: #FFF;
+}
+.btn-stop-share{
+  background: #e67e22;
+  color: #FFF;
+  display: none;
+}
+.btn-stop-share:hover{
+  background: #d35400;
+  color: #FFF;
 }
 .modal-content{
 	background: #505050;
@@ -230,4 +266,20 @@ li.recieve {
 {
     width: 5px;
     background-color:#505050;
+}
+#cobrowsing-holder{
+  width: 100%;
+  height: 600px;
+}
+#cobrowsing-holder div iframe{
+  width: 100% !important;
+  height: 400px !important;
+}
+.context-container{
+  width: 100%;
+  height: 300px;
+}
+.col-half{
+  float: left;
+  width: 50%;
 }

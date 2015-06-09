@@ -5,6 +5,9 @@
 	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script src="https://kandy-portal.s3.amazonaws.com/public/javascript/fcs/3.0.4/fcs.js" ></script>
 	<script src="https://kandy-portal.s3.amazonaws.com/public/javascript/kandy/2.2.2/kandy.js" ></script>
+
+	<script src="https://kandy-portal.s3.amazonaws.com/public/javascript/cobrowse/1.0.1/kandy.cobrowse.min.js"></script>
+
 	<script type="text/javascript" src="styles/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/getcall.js"></script>
 
@@ -57,7 +60,15 @@
  				<div class="header">
  					<button type="button" class="btn btn-signout" id="btn_signout">Sign out</button>
  					<button class="btn btn-hangup" id="btn_hangup">Hangup</button>
+ 					<button id="btnRequest" class="btn btn-request">CoBrowsing Request</button>
  				</div>
+
+ 				<div id="cobrowsing-holder"></div>
+ 				<div class="context-container">
+ 					<div class="col-half"></div>
+ 					<div class="col-half"></div>
+ 				</div>
+ 				
  			</div>
  		</div>
 

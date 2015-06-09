@@ -12,6 +12,9 @@
 	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script src="https://kandy-portal.s3.amazonaws.com/public/javascript/fcs/3.0.4/fcs.js" ></script>
 	<script src="https://kandy-portal.s3.amazonaws.com/public/javascript/kandy/2.2.2/kandy.js" ></script>
+
+	<script src="https://kandy-portal.s3.amazonaws.com/public/javascript/cobrowse/1.0.1/kandy.cobrowse.min.js"></script>
+
 	<script type="text/javascript" src="styles/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 
@@ -35,7 +38,9 @@
 							<div class="modal-header">
 								<button id="btnMakeCall" class="btn btn-call">Make Call</button>
 								<button id="btnHangup" class="btn btn-hangup">Hangup</button>
-								<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+								<button id="btnStopShare" class="btn btn-stop-share">Stop Share</button>
+								<button id="btnClose" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+								<button id="btnMinimize" class="close" data-dismiss="modal" style="margin-right: 10px;"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span><span class="sr-only">Minimize</span></button>
 								<h3 class="modal-title" id="myModalLabel">WebRTC is Comming - Tech Support</h3>
 							</div>
 							<div class="modal-body">
@@ -66,6 +71,22 @@
 										</div>
 										<div class="col-md-9"></div>
 									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="modal fade" id="incoming-request" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog-small">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h3 class="modal-title dark" id="myModalLabel">Share Screen Request</h3>
+								</div>
+								<div class="modal-body dark" id="incomingMessage">
+									<div id="lblMessage">Username want to access to your Screen</div>
+								</div>
+								<div class="modal-footer">
+									<button class="btn btn-accept pull-right" id="btn_acceptCobrow">Answer</button>
 								</div>
 							</div>
 						</div>
